@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio El Horia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="icon" href="images/SiteWebLogoUrl.png" type="image/x-icon">
+
+
+
+</head>
+<body>
+  <header >
+    <div class="logo">
+
+      <img src="images/SiteWebLogoUrl.png" alt="logosite"/><h1><a href="index.html"> <span class="LogoClass"> Studio El Horia</span> </a></h1>
+      <!--<a href="index.html"><img src="images/logo.png" alt="Logo"></a>-->
+    </div>
+    <nav>
+      <div class="mode-toggle">
+        <input type="checkbox" id="dark-mode" class="toggle-checkbox" onchange="toggleMode()">
+        <label for="dark-mode" class="toggle-label"></label>
+      </div>
+      <ul class="menu">
+        <li onclick="openIndex()"><h4><a href="index.html">الرئيسية</a></h4></li>
+        <li onclick="openNosService()"><H4><a href="NosService.html">خدماتنا</a></H4></li>
+        <li onclick="openGallery()"><H4><a href="Gallery.html">صالة العرض</a></H4></li>
+        <li onclick="openContactNous()"><H4><a href="Contact.html"> اتصل بنا </a></H4></li>
+      </ul>
+
+      <div>
+        <button onclick="openReserver()" class="btnReserver" >احجز الان</button>
+      </div>
+      <div class="menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <div class="thankYouPage ">
+
+    <div class="cardThankYou">
+    <h1>شكرا لك  </h1>
+    <h2><span id="name"></span>: عزيزي/عزيزتي </h2>
+    <p>نود أن نعبر عن امتناننا العميق لكونك قد زرت موقع ستوديو الحورية. نحن ممتنون لثقتكم في خدماتنا وسعداء جدًا بالفرصة التي منحتمونا إياها لخدمتكم</p>
+    <p>نحن نقدر ثقتكم في موقعنا ونعدكم بأننا سنعمل بكل جهد لتقديم خدمة عالية الجودة ورضا تام. فريقنا المتفاني في ستوديو الحورية يضع أهمية قصوى على رضا العملاء وتحقيق تطلعاتهم </p>
+   <p>شكرًا مرة أخرى لاختياركم ستوديو الحورية. نحن ممتنون لفرصة خدمتكم ونتطلع إلى بناء علاقة متينة ومثمرة معكم</p>
+   <p>
+    Studio EL Horia مع خالص الشكر والتقدير
+   </p>
+    </div>
+  </div>
+
+
+
+
+  <footer>
+    <div class="footer-content">
+      <!--
+      <div class="right-section">
+        <div class="map-container">
+        <iframe name="MyLocation " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.347349994835!2d-9.547400323524919!3d30.369493103095312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+        1s0xdb3c926b23fefbf%3A0x5e2adcac5967831b!2sStudio%20El%20horia!5e0!3m2!1sfr!2sma!4v1684171509967!5m2!1sfr!2sma" 
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe> 
+          
+        </div>
+      </div>
+      -->
+      <div class="left-section">
+        <div class="logofooter">
+          <div class="logoftr">
+          <h1><a href="index.html"> <span class="LogoClass"> Studio El Horia</span> </a></h1><img src="images/SiteWebLogoUrl.png" alt="logosite"/>
+          <!--<img src="images/logo.png" alt="Logo">-->
+        </div>
+          <h4>يسعدنا أن نكون جزءًا من حدثك الفريد ونتطلع إلى العمل معك لالتقاط اللحظات الثمينة التي ستبقى محفورة إلى الأبد في ذكرياتك</h4>
+        </div>
+        <div class="contact-info">
+          <h4 >Example : N°85 Rue Fayçal, Agadir 80000 <i class="fas fa-map-marker-alt" class="icon-bg"></i> </h4>
+          <h4><a href="tel:+212672300750">0600000000<i class="fas fa-phone" class="icon-bg"></i> </a></H4>
+          <h4><a href="mailto:StudioElHoria@gmail.com">mster.moi@gmail.com<i class="far fa-envelope" class="icon-bg"></i> </a></H4>
+        </div>
+        <div class="social-icons">
+
+          <a href="https://www.facebook.com/issame.heli" target="_blank" rel="noopener noreferrer" class="icon-bg" alt="facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="icon-bg" alt="instagram"><i class="fab fa-instagram"></i>  </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="icon-bg"><i class="fab fa-tiktok"></i> </a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </footer>
+  
+
+  <div class="FinPages">
+    <h5>© TOUS LES DROITS SONT RÉSERVÉS</h5>
+    <h5>  STUDIO EL HORIA 2023</H5>
+  </div>
+</body>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="javascripte.js"></script>
+</html>

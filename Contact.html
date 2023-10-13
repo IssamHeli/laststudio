@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> اتصل بنا  </title>    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="icon" href="images/SiteWebLogoUrl.png" type="image/x-icon">
+
+
+
+</head>
+<body >
+	<header >
+    <div class="logo">
+
+      <img src="images/SiteWebLogoUrl.png" alt="logosite"/><h1><a href="index.html"> <span class="LogoClass"> Studio El Horia</span> </a></h1>
+      <!--<a href="index.html"><img src="images/logo.png" alt="Logo"></a>-->
+    </div>
+    <nav>
+      <div class="mode-toggle">
+        <input type="checkbox" id="dark-mode" class="toggle-checkbox" onchange="toggleMode()">
+        <label for="dark-mode" class="toggle-label"></label>
+      </div>
+      <ul class="menu">
+        <li onclick="openIndex()"><h4><a href="index.html">الرئيسية</a></h4></li>
+        <li onclick="openNosService()"><H4><a href="NosService.html">خدماتنا</a></H4></li>
+        <li onclick="openGallery()"><H4><a href="Gallery.html">صالة العرض</a></H4></li>
+        <li onclick="openContactNous()"><H4><a href="Contact.html"> اتصل بنا </a></H4></li>
+      </ul>
+
+      <div>
+        <button onclick="openReserver()" class="btnReserver" >احجز الان</button>
+      </div>
+      <div class="menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <div class="espacebegin">
+    <br>
+
+  </div>
+  <div class="container5">
+    <div class="right-div2">
+      <h2> : معلومات الاتصال </h2>
+      <div class="contact-info">
+        <h4 >N°85 Rue Fayçal, Agadir 80000 <i class="fas fa-map-marker-alt" class="icon-bg"></i> </h4>
+        <h4><a href="tel:+212672300750">0600000000<i class="fas fa-phone" class="icon-bg"></i> </a></h4>
+        <h4><a href="mailto:heli.issame@gmail.com">mster.moi@gmail.com<i class="far fa-envelope" class="icon-bg"></i> </a></h4>
+      </div> 
+      <div class="social-icons">
+        <a href="https://www.facebook.com/issame.heli" target="_blank" rel="noopener noreferrer" class="icon-bg" alt="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="icon-bg" alt="instagram"><i class="fab fa-instagram"></i>  </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="icon-bg"><i class="fab fa-tiktok"></i> </a>
+      </div>
+    </div>
+
+    <div class="left-div2">
+      <h1>: اتصل بنا </h1>
+      <h4>يسعدنا أن نكون جزءًا من يومك الخاص ونتطلع إلى التقاط ذكريات لا تُنسى من أجلك. اتصل بنا لمناقشة احتياجاتك ولمعرفة كيف يمكننا <b> مساعدتك في إنشاء ذكريات ستعتز بها إلى الأبد </h4>
+    </div>
+  </div>
+  
+  <form  action="ThankYouContactez.html" method="POST">
+    <div class="parent">
+      <div class="child">
+        <div class="row">
+          <div class="column">
+           <!--<label form="nom"> Nom :</label>-->
+            <input id="nameInput" name="nom" type="text"  placeholder=" Nom *" required>
+          </div>
+          <div class="column">
+            <input name="email"  type="email" placeholder="Email *" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <input name="telephone" type="text" placeholder="Telephone *" required>
+          </div>
+          <div class="column">
+            <input name="localisation"  type="text" placeholder="Localisation *" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <input name="dateEvenement" type="date" placeholder="Date d'evenement" required>
+          </div>
+          <div class="column">
+            <select name="serviceInteresse"  required>
+              <option class="placeholderoption" value="">Quel service vous intéresse ? *</option>
+              <option value="Marriage" >Marriage</option>
+              <option value="EVÉNEMENTIEL">EVÉNEMENTIEL</option>
+              <option value="PHOTOGRAPHIE">PHOTOGRAPHIE</option>
+              <option value="PRISE DE VUE AÉRIENNE">PRISE DE VUE AÉRIENNE</option>
+              <option value="ÉQUIPE FÉMININE">ÉQUIPE FÉMININE</option>
+              <option value="CRÉATION">CRÉATION</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="second-div">
+        <textarea name="details" type="text" placeholder="Plus Du Details"></textarea>
+      </div>
+      <div class="therdDiv">
+        <label for="RadioBtn">
+          أوافق على جمع وتخزين البيانات التي سأرسلها</label>
+          <input class="radio" name="RadioBtn" type="radio"   >
+      </div>
+      <div>
+        <button  class="btnsubmit" type="submit" onclick="saveName()">أرسل</button>
+      </div>
+    </div>
+  </form>
+  
+
+  
+  <footer>
+    <div class="footer-content">
+      <!--
+      <div class="right-section">
+        <div class="map-container">
+        <iframe name="MyLocation " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.347349994835!2d-9.547400323524919!3d30.369493103095312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+        1s0xdb3c926b23fefbf%3A0x5e2adcac5967831b!2sStudio%20El%20horia!5e0!3m2!1sfr!2sma!4v1684171509967!5m2!1sfr!2sma" 
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe> 
+          
+        </div>
+        -->
+      </div>
+      <div class="left-section">
+        <div class="logofooter">
+          <div class="logoftr">
+          <h1><a href="index.html"> <span class="LogoClass"> Studio El Horia</span> </a></h1><img src="images/SiteWebLogoUrl.png" alt="logosite"/>
+          <!--<img src="images/logo.png" alt="Logo">-->
+        </div>
+          <p>يسعدنا أن نكون جزءًا من حدثك الفريد ونتطلع إلى العمل معك لالتقاط اللحظات الثمينة التي ستبقى محفورة إلى الأبد في ذكرياتك</p>
+        </div>
+        <div class="contact-info">
+          <p >Example :N°85 Rue Fayçal , Agadir 80000 <i class="fas fa-map-marker-alt" class="icon-bg"></i> </p>
+          <p><a href="tel:+212672300750">0600000000<i class="fas fa-phone" class="icon-bg"></i> </a></p>
+          <p><a href="mailto:heli.issame@gmail.com">mster.moi@gmail.com<i class="far fa-envelope" class="icon-bg"></i> </a></p>
+        </div>
+        <div class="social-icons">
+
+          <a href="https://www.facebook.com/issame.heli" target="_blank" rel="noopener noreferrer" class="icon-bg" alt="facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="icon-bg" alt="instagram"><i class="fab fa-instagram"></i>  </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="icon-bg"><i class="fab fa-tiktok"></i> </a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </footer>
+  
+  
+  
+
+  <a href="https://api.whatsapp.com/send?phone=212672300750" target="_blank" class="whatsapp-icon">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+ 
+
+  <div class="FinPages">
+    <h5>© TOUS LES DROITS SONT RÉSERVÉS</h5>
+    <h5>  STUDIO EL HORIA 2023</H5>
+  </div>
+
+
+  
+  
+
+
+
+  
+    </body>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="javascripte.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("suHNSJiEMegyzNB31");
+      })();
+    </script>
+</html>

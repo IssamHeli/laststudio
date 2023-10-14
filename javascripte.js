@@ -414,6 +414,13 @@ if (window.location.pathname.endsWith('/Gallery.html')) {
 }
 
 if (window.location.pathname.endsWith('/Reserver.html')) {
+
+  function changeInputType() {
+    var input = document.querySelector('input[name="dateEvenement"]');
+    if (input) {
+        input.type = 'date';
+    }
+}
   function saveName() {
     var name = document.getElementById("nameInput").value;
     sessionStorage.setItem("name", name);

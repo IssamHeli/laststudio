@@ -391,7 +391,7 @@ nav ul li  a {
   background-color:var(--background-color);
   text-transform: capitalize;
   color:var(--text-color);
-  border-color:var(--text-color) ;
+  border-color:rgb(253,246,160);
   cursor: pointer;
   box-shadow: 2px 2px 6px var(--text-color), -2px -2px 6px rgb(273,266,180);
 }

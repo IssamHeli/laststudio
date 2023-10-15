@@ -274,7 +274,10 @@ else
   window.addEventListener('load', () => {
     preloadImages(imageUrls)
       .then(() => {
-        // All images are loaded; the page will display as normal
+        // All images are loaded; show the website content
+        document.getElementById('website-content').style.display = 'block';
+        // Hide the loading screen
+        document.querySelector('.loading-screen').style.display = 'none';
       })
       .catch((error) => {
         console.error('Image preloading failed:', error);

@@ -241,30 +241,6 @@ else if (window.location.pathname.endsWith('/ThankYouContactez.html'))
 }
 else if (window.location.pathname.endsWith('/Gallery.html'))
 {
-  const imageUrls = [
-    'images/EVENEMENTIEL.mp4',
-    'images/show.mp4',
-
-    // Add more image URLs as needed
-  ];
-
-  function preloadImages(urls) {
-    const imagePromises = [];
-    
-    for (const url of urls) {
-      const img = new Image();
-      const imagePromise = new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = reject;
-      });
-      img.src = url;
-      imagePromises.push(imagePromise);
-    }
-
-    return Promise.all(imagePromises);
-  }
-
-  window.addEventListener('load',preloadImages(imageUrls));
 }
 else 
 {
@@ -295,8 +271,15 @@ else
 
     return Promise.all(imagePromises);
   }
-
-  window.addEventListener('load',preloadImages(imageUrls));
+  window.addEventListener('load', () => {
+    preloadImages(imageUrls)
+      .then(() => {
+        // All images are loaded; the page will display as normal
+      })
+      .catch((error) => {
+        console.error('Image preloading failed:', error);
+      });
+  });
 
   var currentContentIndex = 0;
   var content = [

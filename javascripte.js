@@ -1,43 +1,3 @@
-const preloadedImages = [];
-
-// Function to preload images
-function preloadImages(imageUrls) {
-  for (const imageUrl of imageUrls) {
-    const img = new Image();
-    img.src = imageUrl;
-    preloadedImages.push(img);
-  }
-}
-
-// List of image URLs to preload
-const imageUrlsToPreload = [
-  "images/firstPhoto.jpg",
-  "images/RightImageAbout.jpg",
-  "images/leftImageAbout.jpg",
-  // Add more image URLs here as needed
-];
-
-// Call the preloadImages function to preload the images
-preloadImages(imageUrlsToPreload);
-
-// Now, you can use preloadedImages array to access preloaded images when needed.
-const preloadedvediogallery = [];
-
-// Function to preload images
-function preloadImagesgallery(imageUrls) {
-  for (const imageUrl of imageUrls) {
-    const img = new Image();
-    img.src = imageUrl;
-    preloadedImages.push(img);
-  }
-}
-
-// List of image URLs to preload
-const imageUrlsToPreloadgalerry = [
-  "images/show.mp4",
-  "images/EVENEMENTIEL.mp4"
-  // Add more image URLs here as needed
-];
 
 
 
@@ -138,11 +98,187 @@ function toggleMenu() {
 
 
 
-
-if (window.location.pathname.endsWith('/index.html')) 
+if (window.location.pathname.endsWith('/NosService.html'))
 {
-  preloadImages(imageUrlsToPreload);
 
+  function animateScroll() {
+    var scrollable = document.querySelector('.scrollable');
+    var maxScrollLeft = scrollable.scrollWidth - scrollable.clientWidth;
+    var isScrollingLeft = true; 
+    if (isScrollingLeft) {
+      scrollable.scrollLeft += 1; // Scroll from left to right
+      if (scrollable.scrollLeft >= maxScrollLeft) {
+        scrollable.scrollLeft = 0; // Reset scroll position to the beginning
+      }
+    } else {
+      scrollable.scrollLeft -= 1; // Scroll from right to left
+      if (scrollable.scrollLeft <= 0) {
+        scrollable.scrollLeft = maxScrollLeft; // Reset scroll position to the end
+      }
+    }
+  }
+  
+  function scrollLoop(){
+    animateScroll();
+    requestAnimationFrame(scrollLoop);
+  }
+  
+  // Start the animation loop
+  scrollLoop();
+
+
+  function animateScroll1() {
+    var scrollable = document.querySelector('.scrollableLogos');
+    var maxScrollLeft = scrollable.scrollWidth - scrollable.clientWidth;
+    var isScrollingLeft = true; 
+    if (isScrollingLeft) {
+      scrollable.scrollLeft += 1; // Scroll from left to right
+      if (scrollable.scrollLeft >= maxScrollLeft) {
+        scrollable.scrollLeft = 0; // Reset scroll position to the beginning
+      }
+    } else {
+      scrollable.scrollLeft -= 1; // Scroll from right to left
+      if (scrollable.scrollLeft <= 0) {
+        scrollable.scrollLeft = maxScrollLeft; // Reset scroll position to the end
+      }
+    }
+  }
+ 
+  function scrollLoop1() {
+    animateScroll1();
+    requestAnimationFrame(scrollLoop1);
+  }
+  
+  // Start the animation loop
+  scrollLoop1();
+}
+else if (window.location.pathname.endsWith('/Contact.html')) 
+{
+    $(document).ready(function() {
+    $("form").submit(function(event) {
+      event.preventDefault();
+  
+      const userApi = "suHNSJiEMegyzNB31";
+      var templateParams = {
+        from_name: "Contact_Studio_El_Horia_Site_Web",
+        TYPE : "Contactez",
+        nom: $("input[name='nom']").val(),
+        email: $("input[name='email']").val(),
+        telephone: $("input[name='telephone']").val(),
+        localisation: $("input[name='localisation']").val(),
+        dateEvenement: $("input[name='dateEvenement']").val(),
+        serviceInteresse: $("select[name='serviceInteresse']").val(),
+        details: $("textarea[name='details']").val()
+      };
+      if ($("input[name='RadioBtn']:checked").length > 0){
+      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, userApi)
+        .then(function(response) {
+          openThankYouContact();
+        }, function(error) {
+          alert(error)
+        });
+      } else {
+        alert("Veuillez accepter que Tes données soumises soient collectées et stockées.");
+      }
+    });
+  });
+}
+else if (window.location.pathname.endsWith('/Reserver.html')) 
+{
+
+  function changeInputType() {
+    var input = document.querySelector('input[name="dateEvenement"]');
+    if (input) {
+        input.type = 'date';
+    }
+}
+  function saveName() {
+    var name = document.getElementById("nameInput").value;
+    sessionStorage.setItem("name", name);
+  }
+  $(document).ready(function() {
+    $("form").submit(function(event) {
+      event.preventDefault();
+  
+      const userApi = "suHNSJiEMegyzNB31";
+      var templateParams = {
+        from_name: "Reserver Studio El Horia Site Web",
+        TYPE : "Reserver",
+        nom: $("input[name='nom']").val(),
+        email: $("input[name='email']").val(),
+        telephone: $("input[name='telephone']").val(),
+        localisation: $("input[name='localisation']").val(),
+        dateEvenement: $("input[name='dateEvenement']").val(),
+        serviceInteresse: $("select[name='serviceInteresse']").val(),
+        details: $("textarea[name='details']").val()
+      };
+      if ($("input[name='RadioBtn']:checked").length > 0){
+      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, userApi)
+        .then(function(response) {
+          openThankYouReserver();
+        }, function(error) {
+          alert("هناك خطأ ما المرجو اعادة المحاولة لاحقا",Error);
+        });
+      } else {
+        alert(" المرجو الموافقة على جمع وتخزين البيانات التي سترسلها ");
+      }
+    });
+  });
+}
+else if (window.location.pathname.endsWith('/ThankYouReserver.html')) 
+{
+  window.onload = function() {
+    var namee = sessionStorage.getItem("name");
+        document.getElementById("name").textContent = namee;
+  };
+}
+else if (window.location.pathname.endsWith('/ThankYouContactez.html')) 
+{
+  window.onload = function() {
+    var namee = sessionStorage.getItem("name");
+        document.getElementById("name").textContent = namee;
+  };
+}
+else if (window.location.pathname.endsWith('/Gallery.html'))
+{
+
+}
+else 
+{
+  const imageUrls = [
+    'images/firstPhoto.jpg',
+    'images/leftImageAbout.jpg',
+    'images/RightImageAbout.jpg',
+    "images/mariage.jpg",
+
+    // Add more image URLs as needed
+  ];
+
+  function preloadImages(urls) {
+    const imagePromises = [];
+    
+    for (const url of urls) {
+      const img = new Image();
+      const imagePromise = new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+      img.src = url;
+      imagePromises.push(imagePromise);
+    }
+
+    return Promise.all(imagePromises);
+  }
+
+  window.addEventListener('load', () => {
+    preloadImages(imageUrls)
+      .then(() => {
+        // All images are loaded, no additional action needed
+      })
+      .catch((error) => {
+        console.error('Image preloading failed:', error);
+      });
+  });
   var currentContentIndex = 0;
   var content = [
     { image: "images/laboElhoria.png", title: " استخدام تقنيات ومعدات عالية الجودة ", description: "تقدم خدمتنا خبرة لا مثيل لها باستخدام تقنيات ومعدات عالية الجودة. نحن ملتزمون بتقديم حلول موثوقة وفعالة ، باستخدام أحدث المعدات والتقنيات المتقدمة. بفضل بحثنا المستمر عن أفضل الطرق والتقنيات الأكثر تقدمًا " },
@@ -324,150 +460,3 @@ if (window.location.pathname.endsWith('/index.html'))
 }
 
 
-
-if (window.location.pathname.endsWith('/NosService.html')) {
-
-  function animateScroll() {
-    var scrollable = document.querySelector('.scrollable');
-    var maxScrollLeft = scrollable.scrollWidth - scrollable.clientWidth;
-    var isScrollingLeft = true; 
-    if (isScrollingLeft) {
-      scrollable.scrollLeft += 1; // Scroll from left to right
-      if (scrollable.scrollLeft >= maxScrollLeft) {
-        scrollable.scrollLeft = 0; // Reset scroll position to the beginning
-      }
-    } else {
-      scrollable.scrollLeft -= 1; // Scroll from right to left
-      if (scrollable.scrollLeft <= 0) {
-        scrollable.scrollLeft = maxScrollLeft; // Reset scroll position to the end
-      }
-    }
-  }
-  
-  function scrollLoop(){
-    animateScroll();
-    requestAnimationFrame(scrollLoop);
-  }
-  
-  // Start the animation loop
-  scrollLoop();
-
-
-  function animateScroll1() {
-    var scrollable = document.querySelector('.scrollableLogos');
-    var maxScrollLeft = scrollable.scrollWidth - scrollable.clientWidth;
-    var isScrollingLeft = true; 
-    if (isScrollingLeft) {
-      scrollable.scrollLeft += 1; // Scroll from left to right
-      if (scrollable.scrollLeft >= maxScrollLeft) {
-        scrollable.scrollLeft = 0; // Reset scroll position to the beginning
-      }
-    } else {
-      scrollable.scrollLeft -= 1; // Scroll from right to left
-      if (scrollable.scrollLeft <= 0) {
-        scrollable.scrollLeft = maxScrollLeft; // Reset scroll position to the end
-      }
-    }
-  }
- 
-  function scrollLoop1() {
-    animateScroll1();
-    requestAnimationFrame(scrollLoop1);
-  }
-  
-  // Start the animation loop
-  scrollLoop1();
-}
-if (window.location.pathname.endsWith('/Contact.html')) {
-    $(document).ready(function() {
-    $("form").submit(function(event) {
-      event.preventDefault();
-  
-      const userApi = "suHNSJiEMegyzNB31";
-      var templateParams = {
-        from_name: "Contact_Studio_El_Horia_Site_Web",
-        TYPE : "Contactez",
-        nom: $("input[name='nom']").val(),
-        email: $("input[name='email']").val(),
-        telephone: $("input[name='telephone']").val(),
-        localisation: $("input[name='localisation']").val(),
-        dateEvenement: $("input[name='dateEvenement']").val(),
-        serviceInteresse: $("select[name='serviceInteresse']").val(),
-        details: $("textarea[name='details']").val()
-      };
-      if ($("input[name='RadioBtn']:checked").length > 0){
-      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, userApi)
-        .then(function(response) {
-          openThankYouContact();
-        }, function(error) {
-          alert(error)
-        });
-      } else {
-        alert("Veuillez accepter que Tes données soumises soient collectées et stockées.");
-      }
-    });
-  });
-}
-
-if (window.location.pathname.endsWith('/Gallery.html')) {
-  preloadImagesgallery(imageUrlsToPreloadgalerry);
-}
-
-if (window.location.pathname.endsWith('/Reserver.html')) {
-
-  function changeInputType() {
-    var input = document.querySelector('input[name="dateEvenement"]');
-    if (input) {
-        input.type = 'date';
-    }
-}
-  function saveName() {
-    var name = document.getElementById("nameInput").value;
-    sessionStorage.setItem("name", name);
-  }
-  $(document).ready(function() {
-    $("form").submit(function(event) {
-      event.preventDefault();
-  
-      const userApi = "suHNSJiEMegyzNB31";
-      var templateParams = {
-        from_name: "Reserver Studio El Horia Site Web",
-        TYPE : "Reserver",
-        nom: $("input[name='nom']").val(),
-        email: $("input[name='email']").val(),
-        telephone: $("input[name='telephone']").val(),
-        localisation: $("input[name='localisation']").val(),
-        dateEvenement: $("input[name='dateEvenement']").val(),
-        serviceInteresse: $("select[name='serviceInteresse']").val(),
-        details: $("textarea[name='details']").val()
-      };
-      if ($("input[name='RadioBtn']:checked").length > 0){
-      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, userApi)
-        .then(function(response) {
-          openThankYouReserver();
-        }, function(error) {
-          alert("هناك خطأ ما المرجو اعادة المحاولة لاحقا",Error);
-        });
-      } else {
-        alert(" المرجو الموافقة على جمع وتخزين البيانات التي سترسلها ");
-      }
-    });
-  });
-}
-
-
-
-if (window.location.pathname.endsWith('/ThankYouReserver.html')) {
-  window.onload = function() {
-    var namee = sessionStorage.getItem("name");
-        document.getElementById("name").textContent = namee;
-  };
-}
-
-
-if (window.location.pathname.endsWith('/ThankYouContactez.html')) {
-  window.onload = function() {
-    var namee = sessionStorage.getItem("name");
-        document.getElementById("name").textContent = namee;
-  };
-}

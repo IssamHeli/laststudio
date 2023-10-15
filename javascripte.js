@@ -250,6 +250,9 @@ else
     'images/leftImageAbout.jpg',
     'images/RightImageAbout.jpg',
     "images/mariage.jpg",
+    'images/laboElhoria.png',
+    'images/forfaits.png',
+    'images/marriageuniquee.png'
 
     // Add more image URLs as needed
   ];
@@ -270,15 +273,8 @@ else
     return Promise.all(imagePromises);
   }
 
-  window.addEventListener('load', () => {
-    preloadImages(imageUrls)
-      .then(() => {
-        // All images are loaded, no additional action needed
-      })
-      .catch((error) => {
-        console.error('Image preloading failed:', error);
-      });
-  });
+  window.addEventListener('load',preloadImages(imageUrls));
+  
   var currentContentIndex = 0;
   var content = [
     { image: "images/laboElhoria.png", title: " استخدام تقنيات ومعدات عالية الجودة ", description: "تقدم خدمتنا خبرة لا مثيل لها باستخدام تقنيات ومعدات عالية الجودة. نحن ملتزمون بتقديم حلول موثوقة وفعالة ، باستخدام أحدث المعدات والتقنيات المتقدمة. بفضل بحثنا المستمر عن أفضل الطرق والتقنيات الأكثر تقدمًا " },

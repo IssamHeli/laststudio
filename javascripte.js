@@ -241,18 +241,9 @@ else if (window.location.pathname.endsWith('/ThankYouContactez.html'))
 }
 else if (window.location.pathname.endsWith('/Gallery.html'))
 {
-
-}
-else 
-{
   const imageUrls = [
-    'images/firstPhoto.jpg',
-    'images/leftImageAbout.jpg',
-    'images/RightImageAbout.jpg',
-    "images/mariage.jpg",
-    'images/laboElhoria.png',
-    'images/forfaits.png',
-    'images/marriageuniquee.png'
+    'images/EVENEMENTIEL.mp4',
+    'images/show.mp4',
 
     // Add more image URLs as needed
   ];
@@ -274,7 +265,39 @@ else
   }
 
   window.addEventListener('load',preloadImages(imageUrls));
-  
+}
+else 
+{
+  const imageUrls = [
+    'images/firstPhoto.jpg',
+    'images/leftImageAbout.jpg',
+    'images/RightImageAbout.jpg',
+    "images/mariage.jpg",
+    'images/laboElhoria.png',
+    'images/forfaits.png',
+    'images/marriageuniquee.png',
+
+    // Add more image URLs as needed
+  ];
+
+  function preloadImages(urls) {
+    const imagePromises = [];
+    
+    for (const url of urls) {
+      const img = new Image();
+      const imagePromise = new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+      img.src = url;
+      imagePromises.push(imagePromise);
+    }
+
+    return Promise.all(imagePromises);
+  }
+
+  window.addEventListener('load',preloadImages(imageUrls));
+
   var currentContentIndex = 0;
   var content = [
     { image: "images/laboElhoria.png", title: " استخدام تقنيات ومعدات عالية الجودة ", description: "تقدم خدمتنا خبرة لا مثيل لها باستخدام تقنيات ومعدات عالية الجودة. نحن ملتزمون بتقديم حلول موثوقة وفعالة ، باستخدام أحدث المعدات والتقنيات المتقدمة. بفضل بحثنا المستمر عن أفضل الطرق والتقنيات الأكثر تقدمًا " },

@@ -248,10 +248,6 @@ else
     'images/firstPhoto.jpg',
     'images/leftImageAbout.jpg',
     'images/RightImageAbout.jpg',
-    "images/mariage.jpg",
-    'images/laboElhoria.png',
-    'images/forfaits.png',
-    'images/marriageuniquee.png',
 
     // Add more image URLs as needed
   ];

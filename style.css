@@ -1693,14 +1693,17 @@ textarea::placeholder {
   align-items: center;
   justify-content: center;
 }
-
+.loading-screen h3{
+  text-align: right;
+  margin: 10px;
+}
 .loader {
   border: 10px solid var(--text-color);
   border-top: 10px solid rgb(253,246,160);
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  animation: spin 2s linear infinite;
+  animation: spin 5s linear infinite;
   margin: 0 auto;
 }
 

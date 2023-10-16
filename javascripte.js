@@ -294,7 +294,6 @@ else
     return Promise.all(imagePromises);
   }
   
-  
   // Set 'loadimage' initially if it's not already set
   if (localStorage.getItem('loadimage') === null) {
     localStorage.setItem('loadimage', 'not_loaded');

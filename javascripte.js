@@ -293,17 +293,22 @@ else
 
     return Promise.all(imagePromises);
   }
+  var loadimage = 0;
   window.addEventListener('load', () => {
-    preloadImages(imageUrlsmobile)
-    .then(() => {
-      // All images are loaded; show the website content
-      document.getElementById('website-content').style.display = 'block';
-      // Hide the loading screen
-      document.querySelector('.loading-screen').style.display = 'none';
-    })
-    .catch((error) => {
-      console.error('Image preloading failed:', error);
-    });
+    if(loadimage = 0){
+      preloadImages(imageUrlsmobile)
+      .then(() => {
+        // All images are loaded; show the website content
+        document.getElementById('website-content').style.display = 'block';
+        // Hide the loading screen
+        document.querySelector('.loading-screen').style.display = 'none';
+        loadimage = 1;
+      })
+      .catch((error) => {
+        console.error('Image preloading failed:', error);
+      });
+    }
+    
   });
 
   var currentContentIndex = 0;

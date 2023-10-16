@@ -271,13 +271,6 @@ else
   // Initial check on page load
   window.addEventListener('load', handleScrollAnimations);
 
-  const imageUrlspc = [
-    'images/firstPhoto.jpg',
-    'images/leftImageAbout.jpg',
-    'images/RightImageAbout.jpg',
-
-    // Add more image URLs as needed
-  ];
 
   const imageUrlsmobile = [
     'images/firstPhoto.jpg',
@@ -301,32 +294,16 @@ else
     return Promise.all(imagePromises);
   }
   window.addEventListener('load', () => {
-    if (window.innerWidth <= 768) 
-    {
-      preloadImages(imageUrlsmobile)
-      .then(() => {
-        // All images are loaded; show the website content
-        document.getElementById('website-content').style.display = 'block';
-        // Hide the loading screen
-        document.querySelector('.loading-screen').style.display = 'none';
-      })
-      .catch((error) => {
-        console.error('Image preloading failed:', error);
-      });
-    } else 
-    {
-      preloadImages(imageUrlspc)
-      .then(() => {
-        // All images are loaded; show the website content
-        document.getElementById('website-content').style.display = 'block';
-        // Hide the loading screen
-        document.querySelector('.loading-screen').style.display = 'none';
-      })
-      .catch((error) => {
-        console.error('Image preloading failed:', error);
-      });
-    }
-    
+    preloadImages(imageUrlsmobile)
+    .then(() => {
+      // All images are loaded; show the website content
+      document.getElementById('website-content').style.display = 'block';
+      // Hide the loading screen
+      document.querySelector('.loading-screen').style.display = 'none';
+    })
+    .catch((error) => {
+      console.error('Image preloading failed:', error);
+    });
   });
 
   var currentContentIndex = 0;

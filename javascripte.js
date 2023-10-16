@@ -293,23 +293,38 @@ else
 
     return Promise.all(imagePromises);
   }
-  var loadimage = 0;
-  window.addEventListener('load', () => {
-    if(loadimage = 0){
+  
+  
+  // Set 'loadimage' initially if it's not already set
+  if (localStorage.getItem('loadimage') === null) {
+    localStorage.setItem('loadimage', 'not_loaded');
+  }
+  
+  if (localStorage.getItem('loadimage') !== 'loaded') {
+    window.addEventListener('load', () => {
       preloadImages(imageUrlsmobile)
-      .then(() => {
-        // All images are loaded; show the website content
-        document.getElementById('website-content').style.display = 'block';
-        // Hide the loading screen
-        document.querySelector('.loading-screen').style.display = 'none';
-        loadimage = 1;
-      })
-      .catch((error) => {
-        console.error('Image preloading failed:', error);
-      });
-    }
-    
-  });
+        .then(() => {
+          // All images are loaded; show the website content
+          document.getElementById('website-content').style.display = 'block';
+          // Hide the loading screen
+          document.querySelector('.loading-screen').style.display = 'none';
+  
+          // Mark the images as loaded in local storage
+          localStorage.setItem('loadimage', 'loaded');
+        })
+        .catch((error) => {
+          console.error('Image preloading failed:', error);
+        });
+    });
+  } else {
+    // Images have already been loaded; show the website content
+    document.getElementById('website-content').style.display = 'block';
+    // Hide the loading screen
+    document.querySelector('.loading-screen').style.display = 'none';
+  }
+  
+
+  
 
   var currentContentIndex = 0;
   var content = [

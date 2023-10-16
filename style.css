@@ -1695,8 +1695,8 @@ textarea::placeholder {
 }
 
 .loader {
-  border: 10px solid rgba(255, 255, 255, 0.3);
-  border-top: 10px solid #3498db;
+  border: 10px solid var(--text-color);
+  border-top: 10px solid rgb(253,246,160);
   border-radius: 50%;
   width: 80px;
   height: 80px;

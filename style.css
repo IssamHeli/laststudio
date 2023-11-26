@@ -41,20 +41,32 @@ H4{
   border-radius: 10px;
   position: relative;
   cursor: pointer;
+  filter :drop-shadow(1px 1px 3px var(--text-color));
 }
 .logoftr img{
  
   width: 60px;
   height: 60px;
-  align-self: center; 
+  align-self: center;
+  filter :drop-shadow(1px 1px 3px var(--text-color));
 }
 .logo img{
   width: 50px;
   height: 40px;
   align-self: center;
+  justify-content: left;
+  left: 0;
+  filter :drop-shadow(1px 1px 3px var(--text-color));
+
+  order: 0;
+  display:inline-block;
+  flex-shrink: 0;
 }
 .toggle-label:before {
-  content: "";
+  content: "O";
+  color: var(--text-color);
+  text-align: center;
+  align-self: center;
   position: absolute;
   width: 16px;
   height: 16px;
@@ -64,11 +76,12 @@ H4{
   left: 2px;
   transition: transform 0.2s;
 }
-
 .toggle-checkbox:checked + .toggle-label {
+  color: var(--text-color);
   background-color: var(--text-color);
 }
 .toggle-checkbox:checked + .toggle-label:before {
+  content: "O";
   transform: translateX(20px);
 }
 p,a,h2,h3,H1,label{
@@ -107,7 +120,7 @@ a{
   align-self: center;
   width: 350px;
   height: 70px;
-  padding-left: 10px;
+  padding-right: 10px ;
 }
 .logo h1{
   font-size: 30px;
@@ -117,6 +130,7 @@ a{
   color: var(--background-color);
   width: 300px;
   align-self: center;
+  text-align: right;
 }
 html{
   width: 100%;
@@ -183,6 +197,7 @@ nav .menu-icon i {
 nav{
   align-items:center;
   text-align: left;
+
 }
 nav ul {
   list-style: none;
@@ -336,10 +351,13 @@ nav ul li  a {
   height: 40px;
   text-align: center;
   vertical-align: middle;
+  align-self: center;
+  border-color:var(--background-color);
   background-color:rgb(253,246,160);
   color:black;
   border-radius: 10px;
   margin-top: 15px;
+  animation: zoomInOutService 3s infinite;
 
   
 }
@@ -347,10 +365,11 @@ nav ul li  a {
   background-color:var(--background-color);
   text-transform: capitalize;
   color:var(--text-color);
-  border-color:rgb(253,246,160);
+  border-color:var(--text-color);
   animation: zoomInOutSlider 3s ease-in-out ;
   cursor: pointer;
-  box-shadow: 2px 2px 6px var(--text-color), -2px -2px 6px rgb(273,266,180); 
+  filter :drop-shadow(32px 32px 32px var(--text-color));
+  animation: zoomInOutService 3s infinite;
 }
 .Reserver{
   flex-shrink: 0; /* prevent the button from shrinking */
@@ -361,7 +380,6 @@ nav ul li  a {
   margin: 10px;
   color:black;
   border-radius: 10px;
-  animation: zoomInOutService 3s infinite;
   
 }
 .Reserver:hover{
@@ -393,7 +411,7 @@ nav ul li  a {
   color:var(--text-color);
   border-color:rgb(253,246,160);
   cursor: pointer;
-  box-shadow: 2px 2px 6px var(--text-color), -2px -2px 6px rgb(273,266,180);
+  filter :drop-shadow(4px 4px 10px rgb(273,266,180));
 }
 
 
@@ -612,7 +630,7 @@ i:hover{
 }
 
 .center-content h4{
-  font-size: 20px;
+  font-size: 25px;
   text-align: right;
   width: 96%;
   color: var(--text-color);
@@ -683,6 +701,7 @@ i:hover{
   overflow: hidden;
   margin: 0 auto 10px;
   border: var(--text-color) solid 4px;
+  filter :drop-shadow(2px 2px 6px var(--text-color));
 }
 .service-image:hover{
   animation: zoomInOutService 2s infinite;
@@ -984,11 +1003,19 @@ form{
   width: 100%;
 }
 
-
+.welcommediascrean{
+  display: none;
+}
 /* Media1 query for smaller screens */
 @media screen and (max-width: 912px) 
 {
-  
+  .welcompcscrean{
+    display: none;
+  }
+
+  .welcommediascrean{
+    display: block;
+  }
   .how-we-are {
     flex-direction: column;
     width: 100%;
@@ -1013,7 +1040,7 @@ form{
   width: 100%;
  }
   .mode-toggle{
-    margin-right: 2px;
+    margin-left: 2px;
   }
  
   .text-div p{
@@ -1026,6 +1053,7 @@ form{
   .logo {
     display: flex;
     align-self: center;
+    justify-content: right;
     width: 300px;
     height: 70px;
     padding-left: 5px;
@@ -1038,12 +1066,14 @@ form{
     color: blue;
     width: max-content;
     align-self: center;
+    justify-content: right;
+    text-align: right;
   }
 header nav{
   display: flex;
   width:100%;
-  justify-content: right;
-  padding-right: 2px;
+  justify-content: left;
+  padding-left: 2px;
   
 }
   nav .menu-icon {
@@ -1710,4 +1740,7 @@ textarea::placeholder {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.iconbrowser{
+  filter :drop-shadow(4px 4px 10px var(--text-color));
 }

@@ -1727,6 +1727,11 @@ textarea::placeholder {
   text-align: right;
   margin: 10px;
 }
+.loading-screen h5{
+  text-align: right;
+  margin: 10px;
+  color: var(--text-color);
+}
 .loader {
   border: 10px solid var(--text-color);
   border-top: 10px solid rgb(253,246,160);

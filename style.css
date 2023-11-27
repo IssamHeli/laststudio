@@ -47,9 +47,10 @@ H4{
 .logoftr img{
  
   width: 60px;
-  height: 60px;
+  height: 50px;
   align-self: center;
   filter :drop-shadow(1px 1px 3px var(--text-color));
+  transform: rotate3d(0, 1, 0, 20deg);
 }
 .logo img{
   width: 50px;
@@ -296,6 +297,8 @@ nav ul li  a {
   align-items: center;
   width: 600px; /* Default width for desktop */
   height: auto;
+  transform: translateX(0%);
+  animation: float 5s ease-in-out infinite;
 
 
 
@@ -307,10 +310,11 @@ nav ul li  a {
   max-height: 100%;
   object-fit: contain;
   height: auto;
-  filter :drop-shadow(4px 4px 10px var(--text-color));
+  filter :drop-shadow(10px 10px 20px var(--text-color));
+  align-self: center;
+
   
 }
-
 .text-div {
   width: 500px;
   padding-left: 10px;
@@ -1750,4 +1754,33 @@ textarea::placeholder {
 }
 .iconbrowser{
   filter :drop-shadow(4px 4px 10px var(--text-color));
+}
+.ocean {
+  height: 200px; /* Set the height of the "ocean" container */
+  position: relative;
+  overflow: hidden;
+}
+
+.logoftr1 {
+  width: 190px;
+  height: 180px;
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Center the logo horizontally */
+  animation: float 5s ease-in-out infinite;
+}
+.logoftr1 img {
+  width: 180px;
+  height: 170px;
+  align-self: center;
+  filter :drop-shadow(1px 1px 3px var(--text-color));
+  transform: rotate3d(0, 1, 0, 20deg);
+}
+@keyframes float {
+  0%,100% {
+    transform: translateX(-1%) translateY(2px) rotate(1deg); /* Start */
+  }
+  50% {
+    transform: translateX(-1%) translateY(-2px) rotate(0deg); /* End */
+  }
 }

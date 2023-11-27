@@ -368,7 +368,7 @@ nav ul li  a {
   border-color:var(--text-color);
   animation: zoomInOutSlider 3s ease-in-out ;
   cursor: pointer;
-  filter :drop-shadow(32px 32px 32px var(--text-color));
+  filter :drop-shadow(32px 32px 32px rgb(253,246,160));
   animation: zoomInOutService 3s infinite;
 }
 .Reserver{
@@ -388,7 +388,7 @@ nav ul li  a {
   color:var(--text-color);
   border-color:rgb(253,246,160);
   cursor: pointer;
-  box-shadow: 2px 2px 6px var(--text-color), -2px -2px 6px rgb(273,266,180);
+  box-shadow: 2px 2px 6px var(--text-color), -2px -2px 6px var(--background-color);
 }
 .btnReserver{
   order: 2;
@@ -411,7 +411,7 @@ nav ul li  a {
   color:var(--text-color);
   border-color:rgb(253,246,160);
   cursor: pointer;
-  filter :drop-shadow(4px 4px 10px rgb(273,266,180));
+  filter :drop-shadow(4px 4px 10px rgb(253,246,160));
 }
 
 

@@ -27,6 +27,7 @@ H4{
   align-self: center;
   text-align: left;
   width: max-content;
+  padding-left: 5px;
   height: 20px;
   background-color: var(--background-color);
 }
@@ -196,7 +197,8 @@ nav .menu-icon i {
 }
 nav{
   align-items:center;
-  text-align: left;
+  text-align: center
+  ;
 
 }
 nav ul {
@@ -1073,7 +1075,7 @@ header nav{
   display: flex;
   width:100%;
   justify-content: left;
-  padding-left: 2px;
+  padding-left: 5px;
   
 }
   nav .menu-icon {

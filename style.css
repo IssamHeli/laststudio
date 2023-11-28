@@ -51,6 +51,8 @@ H4{
   align-self: center;
   filter :drop-shadow(1px 1px 3px var(--text-color));
   transform: rotate3d(0, 1, 0, 20deg);
+  transform: translateX(0%);
+  animation: float 5s ease-in-out infinite;
 }
 .logo img{
   width: 50px;
@@ -59,6 +61,8 @@ H4{
   justify-content: left;
   left: 0;
   filter :drop-shadow(1px 1px 3px var(--text-color));
+  transform: translateX(0%);
+  animation: float 5s ease-in-out infinite;
 
   order: 0;
   display:inline-block;
@@ -297,8 +301,8 @@ nav ul li  a {
   align-items: center;
   width: 600px; /* Default width for desktop */
   height: auto;
-  transform: translateX(0%);
-  animation: float 5s ease-in-out infinite;
+  filter :drop-shadow(6px 6px 10px var(--text-color));
+
 
 
 
@@ -310,9 +314,10 @@ nav ul li  a {
   max-height: 100%;
   object-fit: contain;
   height: auto;
-  filter :drop-shadow(10px 10px 20px var(--text-color));
   align-self: center;
 
+  transform: translateX(0%);
+  animation: float 5s ease-in-out infinite;
   
 }
 .text-div {
@@ -486,6 +491,8 @@ footer {
   background-color: rgb(253,246,160); /* Set your desired background color */
   border-radius: 50%;
   color: rgb(75,85,100);
+  transform: translateX(0%);
+  animation: float 5s ease-in-out infinite;
 }
 .right-section{
   height:350px;
@@ -550,6 +557,8 @@ p{
   color: white;
   font-size: 24px;
   text-decoration: none;
+  transform: translateX(0%);
+  animation: float 5s ease-in-out infinite;
 }
 
 .social-icons a:hover {
@@ -707,7 +716,8 @@ i:hover{
   overflow: hidden;
   margin: 0 auto 10px;
   border: var(--text-color) solid 4px;
-  filter :drop-shadow(2px 2px 6px var(--text-color));
+  transform: translateX(0%);
+  animation: float 3s ease-in-out infinite;
 }
 .service-image:hover{
   animation: zoomInOutService 2s infinite;

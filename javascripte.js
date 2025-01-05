@@ -157,7 +157,12 @@ else if (window.location.pathname.endsWith('/Contact.html'))
     $(document).ready(function() {
     $("form").submit(function(event) {
       event.preventDefault();
-  
+      
+
+      var name = document.getElementById("nameInput").value;
+      sessionStorage.setItem("name", name);
+
+
       const userApi = "suHNSJiEMegyzNB31";
       var templateParams = {
         from_name: "Contact_Studio_El_Horia_Site_Web",
@@ -175,10 +180,10 @@ else if (window.location.pathname.endsWith('/Contact.html'))
         .then(function(response) {
           openThankYouContact();
         }, function(error) {
-          alert(error)
+          alert("هناك خطأ ما المرجو اعادة المحاولة لاحقا",Error);
         });
       } else {
-        alert("Veuillez accepter que Tes données soumises soient collectées et stockées.");
+        alert(" المرجو الموافقة على جمع وتخزين البيانات التي سترسلها ");
       }
     });
   });
@@ -192,14 +197,14 @@ else if (window.location.pathname.endsWith('/Reserver.html'))
         input.type = 'date';
     }
 }
-  function saveName() {
-    var name = document.getElementById("nameInput").value;
-    sessionStorage.setItem("name", name);
-  }
   $(document).ready(function() {
     $("form").submit(function(event) {
       event.preventDefault();
-  
+      
+
+      var name = document.getElementById("nameInput").value;
+      sessionStorage.setItem("name", name);
+
       const userApi = "suHNSJiEMegyzNB31";
       var templateParams = {
         from_name: "Reserver Studio El Horia Site Web",

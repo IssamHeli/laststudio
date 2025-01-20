@@ -1,3 +1,3 @@
 # Studio El Horia 
 
-![HomePage](Images/homePage.jpg)
+![HomePage](images/homePage.png)

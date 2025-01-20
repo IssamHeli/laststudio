@@ -163,7 +163,7 @@ else if (window.location.pathname.endsWith('/Contact.html'))
       sessionStorage.setItem("name", name);
 
 
-      const emailjskey = "YourEmailjsKey";
+      const emailjskey = "suHNSJiEMegyzNB31";
       var templateParams = {
         from_name: "Contact_Studio_El_Horia_Site_Web",
         TYPE : "Contactez",
@@ -205,7 +205,7 @@ else if (window.location.pathname.endsWith('/Reserver.html'))
       var name = document.getElementById("nameInput").value;
       sessionStorage.setItem("name", name);
 
-      const EmailJsKey = "YourEmailJsKey";
+      const EmailJsKey = "suHNSJiEMegyzNB31";
       var templateParams = {
         from_name: "Reserver Studio El Horia Site Web",
         TYPE : "Reserver",

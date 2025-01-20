@@ -163,7 +163,7 @@ else if (window.location.pathname.endsWith('/Contact.html'))
       sessionStorage.setItem("name", name);
 
 
-      const userApi = "suHNSJiEMegyzNB31";
+      const emailjskey = "YourEmailjsKey";
       var templateParams = {
         from_name: "Contact_Studio_El_Horia_Site_Web",
         TYPE : "Contactez",
@@ -176,7 +176,7 @@ else if (window.location.pathname.endsWith('/Contact.html'))
         details: $("textarea[name='details']").val()
       };
       if ($("input[name='RadioBtn']:checked").length > 0){
-      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, userApi)
+      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, emailjskey)
         .then(function(response) {
           openThankYouContact();
         }, function(error) {
@@ -205,7 +205,7 @@ else if (window.location.pathname.endsWith('/Reserver.html'))
       var name = document.getElementById("nameInput").value;
       sessionStorage.setItem("name", name);
 
-      const userApi = "suHNSJiEMegyzNB31";
+      const EmailJsKey = "YourEmailJsKey";
       var templateParams = {
         from_name: "Reserver Studio El Horia Site Web",
         TYPE : "Reserver",
@@ -218,7 +218,7 @@ else if (window.location.pathname.endsWith('/Reserver.html'))
         details: $("textarea[name='details']").val()
       };
       if ($("input[name='RadioBtn']:checked").length > 0){
-      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, userApi)
+      emailjs.send("Service_Contactez_Nous", "template_Contactez_Nous", templateParams, EmailJsKey)
         .then(function(response) {
           openThankYouReserver();
         }, function(error) {
